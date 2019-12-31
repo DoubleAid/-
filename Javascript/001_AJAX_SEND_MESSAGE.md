@@ -31,8 +31,17 @@
 5. cache：是否缓存请求结果，bool表示
 6. contentType：内容类型，默认为"application/x-www-form-urlencoded"
 7. dataType：服务器响应的数据类型，字符串表示；当填写为json时，回调函数中无需再对数据反序列化为json
+   如果返回类型不对，会返回错误信息， parserError
 8. success：请求成功后，服务器回调的函数
 9. error：请求失败后，服务器回调的函数
+   可以通过打印查看错误的原因
+   ```
+   function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log(XMLHttpRequest);
+                console.log(textStatus);
+                console.log(errorThrown);
+            }
+   ```
 10. complete：请求完成后调用的函数，无论请求是成功还是失败，都会调用该函数；如果设置了success与error函数，则该函数在它们之后被调用
 11. async：是否异步处理，bool表示，默认为true；设置该值为false后，JS不会向下执行，而是原地等待服务器返回数据，并完成相应的回调函数后，再向下执行
 12. username：访问认证请求中携带的用户名，字符串表示
