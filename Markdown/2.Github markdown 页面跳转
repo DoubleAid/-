@@ -1,0 +1,18 @@
+## 业内索引
+Github 支持的语法在标准markdown语法的基础上作了修改，称为Github Flavored Markdown，简称GFM
+详细语法参考 [markdown 语法](https://github.com/guodongxiaren/README)
+实现GFM Anchor的代码如下 [GFM Anchor 实现](https://github.com/jch/html-pipeline/blob/master/lib/html/pipeline/toc_filter.rb)
+#### 功能/语法
+1. 将所有字符转化为小写
+2. 删除任何非数字、字母、空格、汉字、连接符-
+3. 用 - 替换所有的空格
+4. 如果关键字不唯一，添加-1，-2，-3使之成为唯一标记符
+####例如：
+```
+# What is Lamda?
+所使用的链接为
+[连接名](#what-is-lamda)
+```
+
+## 参考链接
+* [知乎：如何实现Github markdown 目录/页面跳转？](https://www.zhihu.com/question/58630229)
