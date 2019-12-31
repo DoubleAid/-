@@ -1,8 +1,8 @@
 * [GET 方法](#get-方法)
 * [AJAX 方法](#ajax-通用)
-* [POST 方法](#j3)
-* [getJSON 方法](#j4)
-* [load 方法](#j5)
+* [POST 方法](#post-方法)
+* [getJSON 方法](#getjson-直接获取数据)
+* [load 方法](#load-方法)
 
 
 ## GET 方法
