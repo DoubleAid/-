@@ -1,12 +1,11 @@
-* [GET 方法](#j1)
-* [AJAX 方法](#j2)
+* [GET 方法](#get-方法)
+* [AJAX 方法](#ajax-通用)
 * [POST 方法](#j3)
 * [getJSON 方法](#j4)
 * [load 方法](#j5)
 
 
 ## GET 方法
-<span id=“j1”></span>
 GET 方法无法传递数据，只能从url处获取信息
 1. 返回字符串
 ```
