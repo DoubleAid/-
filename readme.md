@@ -6,4 +6,4 @@
 * [Markdown](/Markdown)
    * [markdown 语法汇总](/Markdown/readme.md)
    * [001.markdown基本语法](/Markdown/001.markdown基本语法.md)
-   * [002.Github markdown 页面跳转.md](/Markdown/002.Github markdown 页面跳转.md)
+   * [002.Github markdown 页面跳转.md](/Markdown/002.Github_markdown_页面跳转.md)
