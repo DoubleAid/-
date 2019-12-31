@@ -1,4 +1,12 @@
+* [GET 方法](#j1)
+* [AJAX 方法](#j2)
+* [POST 方法](#j3)
+* [getJSON 方法](#j4)
+* [load 方法](#j5)
+
+
 ## GET 方法
+<span id=“j1”></span>
 GET 方法无法传递数据，只能从url处获取信息
 1. 返回字符串
 ```
@@ -33,6 +41,7 @@ def mylist():
     return jsonify(l)
 ```
 ## AJAX 通用
+<span id=“j2”></span>
 Ajax 可以通过指定type的类型使用POST 和GET 方法，ajax也会通过是否上传数据判断GET或POST
 ```
 $.ajax({url:"/mystring", data:{"mydata": "test"},success:function(data){
@@ -78,6 +87,7 @@ def mylist():
     return jsonify(l)
 ```
 ## POST 方法
+<span id=“j3”></span>
 post 方法发送数据，获取数据
 ```
 $.post("/mydict", function(data, status){
@@ -89,6 +99,7 @@ def mydict():
     return jsonify(d)
 ```
 ## getJSON 直接获取数据
+<span id=“j4”></span>
 ```
 $.getJSON("/mydict",function(data){
             $.each(data, function(i, field){
@@ -101,6 +112,7 @@ def mydict():
     return jsonify(d)
 ```
 ## load 方法
+<span id=“j5”></span>
 load() 方法通过 AJAX 请求从服务器加载数据，并把返回的数据放置到指定的元素中。
 ```
 $("p").load("/mystring");
