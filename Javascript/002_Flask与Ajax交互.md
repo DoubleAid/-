@@ -101,6 +101,7 @@ def mydict():
     return jsonify(d)
 ```
 ## load 方法
+load() 方法通过 AJAX 请求从服务器加载数据，并把返回的数据放置到指定的元素中。
 ```
 $("p").load("/mystring");
 $("p").load("../static/test.txt");
