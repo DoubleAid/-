@@ -2,13 +2,13 @@
 * [AJAX 方法](#ajax-通用)
 * [POST 方法](#post-方法)
 * [getJSON 方法](#getjson-直接获取数据)
-* [load 方法](#load-方法)
+* [load 方法](#load-方法)  
 返回数据方式参考[GET 方法](#get-方法)
 ****
 
 ## GET 方法
-GET 方法无法传递数据，只能从url处获取信息
-上传数据方式为 http://abc.com/search/search?tag=all&keyWords=%E7%A6%BB%E8%81%8C&lc=cn&type=next#NewKeyWords=%E7%A6%BB%E8%81%8C
+GET 方法无法传递数据，只能从url处获取信息  
+上传数据方式为 http://abc.com/search/search?tag=all&keyWords=%E7%A6%BB%E8%81%8C&lc=cn&type=next#NewKeyWords=%E7%A6%BB%E8%81%8C  
 get 获取表单信息 使用的是 request.args.get() 方法
 ```
 $.get("/mystring",function(data, status){
@@ -32,8 +32,7 @@ def mystring():
         return jsonify(mdict)
 ```
 ## AJAX 通用
-使用 post 方法时，获取数据使用request.form.get(); 使用 get 方法时，获取数据使用request.args.get() 
-<span id=“j2”></span>
+使用 post 方法时，获取数据使用request.form.get(); 使用 get 方法时，获取数据使用request.args.get()   
 Ajax 可以通过指定type的类型使用POST 和GET 方法，ajax也会通过是否上传数据判断GET或POST
 1. get 方法获取数据
 ```
@@ -59,7 +58,7 @@ def dataFromAjax():
     return 'dataFromAjax'
 ```
 ## POST 方法
-使用 post 方法时，获取数据使用request.form.get()
+使用 post 方法时，获取数据使用request.form.get()  
 post 方法发送数据，获取数据
 ```
 $.post("/mydict", function(data, status){
