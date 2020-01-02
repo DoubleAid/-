@@ -3,11 +3,13 @@
 * [POST 方法](#post-方法)
 * [getJSON 方法](#getjson-直接获取数据)
 * [load 方法](#load-方法)
-
+返回数据方式参考[GET 方法](#get-方法)
+****
 
 ## GET 方法
 GET 方法无法传递数据，只能从url处获取信息
-1. 返回字符串
+上传数据方式为 http://abc.com/search/search?tag=all&keyWords=%E7%A6%BB%E8%81%8C&lc=cn&type=next#NewKeyWords=%E7%A6%BB%E8%81%8C
+get 获取表单信息 使用的是 request.args.get() 方法
 ```
 $.get("/mystring",function(data, status){
          alert("数据: " + data + "\n状态: " + status);
@@ -15,78 +17,49 @@ $.get("/mystring",function(data, status){
       
 @app.route('/mystring')
 def mystring():
-    return 'my string'
-```
-2. 返回 json 字典 数据
-```
-$.get("/mydict",function(data, status){
-         alert("name: " + data.name + " age:" + data.age);
-      });
-
-@app.route('/mydict', methods=['GET', 'POST'])
-def mydict():
-    d = {'name': 'xmr', 'age': 18}
-    return jsonify(d)
-```
-3. 返回 json 数据 数据
-```
-$.get("/mylist",function(data, status){
-         alert("name: " + data[0]+ " age:" + data[1]);
-      });
-
-@app.route('/mylist')
-def mylist():
-    l = ['xmr', 18]
-    return jsonify(l)
+    # 获取数据
+    num = request.args.get("num")
+    if num == 1:
+        # 返回字符串
+        return 'my string'
+    elif num == 2:
+        # 返回 数组 数据
+        mlist = ["are","you","ok"]
+        return jsonify(mlist)
+    else:
+        # 返回 字典 数据
+        mdict = {1:"are",2:"you",3:"ok"}
+        return jsonify(mdict)
 ```
 ## AJAX 通用
+使用 post 方法时，获取数据使用request.form.get(); 使用 get 方法时，获取数据使用request.args.get() 
 <span id=“j2”></span>
 Ajax 可以通过指定type的类型使用POST 和GET 方法，ajax也会通过是否上传数据判断GET或POST
+1. get 方法获取数据
 ```
-$.ajax({url:"/mystring", data:{"mydata": "test"},success:function(data){
+$.ajax({url:"/mystring",success:function(data){
          alert(data);
       }});
 
 @app.route('/mystring')
 def mystring():
+    print(request.args.get("a"))
     return 'my string'
 ```
-2. 上传和获取数据
+2. post 上传和获取数据
 ```
-$.ajax({url:"/dataFromAjax", data:{"mydata": "test data"},success:function(data){
+$.ajax({url:"/dataFromAjax", data:{"mydata": "test data"},type:'POST',success:function(data){
          alert(data);
       }});
 
 @app.route('/dataFromAjax')
 def dataFromAjax():
-    test = request.args.get('mydata')
+    test = request.form.get('mydata')
     print(test)
     return 'dataFromAjax'
 ```
-3. 获取 json 字典 数据
-```
-$.ajax({url:"/mydict", success:function(data){
-         alert("name: " + data.name + " age:" + data.age);
-      }});
-      
-@app.route('/mydict', methods=['GET', 'POST'])
-def mydict():
-    d = {'name': 'xmr', 'age': 18}
-    return jsonify(d)
-```
-4. 获取json 数组 数据
-```
- $.ajax({url:"/mylist", success:function(data){
-         alert("name: " + data[0] + " age:" + data[1]);
-      }});
-      
-@app.route('/mylist')
-def mylist():
-    l = ['xmr', 18]
-    return jsonify(l)
-```
 ## POST 方法
-<span id=“j3”></span>
+使用 post 方法时，获取数据使用request.form.get()
 post 方法发送数据，获取数据
 ```
 $.post("/mydict", function(data, status){
