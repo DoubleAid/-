@@ -12,3 +12,6 @@
 * [Python](/Python)
    * [001.jinja2语法汇总](/Python/001.jinja2语法汇总.md)
    * [002.Flask+uwsgi+nginx环境搭建](/Python/002.Flask+uwsgi+nginx环境搭建.md)
+   
+## 想法，计划
+1. 如何在mac上实现百度云加速下载
