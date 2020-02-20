@@ -8,6 +8,6 @@
 >> [Activity的生命周期](003.Activity的生命周期.md)  
 >> [Activity间的通信](004.Activity间的通信.md)  
 >> [Activity启动模式](005.Activity启动模式.md)  
-
+>> [Intent详解](006.Intent详解.md)
 ## 参考列表
 + [1.Android开发文档](https://developer.android.com/docs)
